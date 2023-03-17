@@ -84,7 +84,7 @@ input {
   padding: 8px;
   text-align: center;
   border-radius: 8px;
-
+  
 }
 
     </style>
@@ -133,15 +133,11 @@ input {
                 </div>
                 <div>
                     <p>數字驗證(Verificaon):</p>
-                    <div style="display: flex;flex-direction: row;">
-                        <div style="display: flex;align-items: center;">
-                          <input type="tel"  placeholder="按圖片重製驗證碼" minlength="4" maxlength="4" onkeypress="return event.charCode>=48 && event.charCode<=57" id="rrrr">
-                          <div style="    display: flex;align-items: flex-start;">
-                              <p onclick="oo()" id="ooo" >0000</p>
+                    <div style="display: flex;flex-direction: row;align-items: center;">
+                          <input type="tel"  style="width:150px;" placeholder="按圖片重製驗證碼" minlength="4" maxlength="4" onkeypress="return event.charCode>=48 && event.charCode<=57" id="rrrr">
+                          <p onclick="oo()" id="ooo" >0000</p>
                               <!-- <p style="color: red; font-size: 10px;margin: 0;">*按圖片重製驗證碼</p> -->
                         </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
