@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="./LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <script src="./素材庫/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <a href="home.html" class="web">Home</a>
+        <a href="news.html">News</a>
+        <a href="home.html"><img src="./LOGO.png" alt=""></a>
+        <a href="discover.html">Discover</a>
+        <a href="tickets.html">Tickets</a>
+    </div>
+    <div class="box">
+        <button class="bt" onclick="n(0)">&lang;</button>
+            <div class="hi 1">
+                <img src="./素材庫/img/Carousel1.jpg" alt="">
+                <div>
+                    <h1>標題</h1>
+                    <p>描述性文字</p>
+                </div>
+            </div>
+            <div class="hi 2">
+                <img src="./素材庫/img/Carousel2.jpg" alt="">
+                <div>
+                    <h1>標題</h1>
+                    <p>描述性文字</p>
+                </div>
+            </div>
+            <div class="hi 3">
+                <img src="./素材庫/img/Carousel3.jpg" alt="">
+                <div>
+                    <h1>標題</h1>
+                    <p>描述性文字</p>
+                </div>
+            </div>
+        <button class="bt" onclick="n(1)">&rang;</button>
+    </div>
+    <div class="box">
+        <button onclick="m(1)" class="nav 1"></button>
+        <button onclick="m(2)" class="nav 2"></button>
+        <button onclick="m(3)" class="nav 3"></button>
+    </div>
+    <div class="box">
+        <div class="tbox">
+            <h2>活動資訊區</h2>
+            <p>提供的文字</p>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <a href="https://facebook"><img src="./素材庫/facebook.png" alt=""></a>
+            <a href="https://google"><img src="./素材庫/google.png" alt=""></a>
+        </div>
+        <p>Copyright &copy; 2023 YODEX All Rights Reserved</p>
+    </footer>
+    <script>
+        let img = 1,e=0;
+        mv(1)
+        setInterval(() => {
+            e++
+            if(e>3)n(1)
+        }, 1000);
+        function n(i) {e=0
+            mo(img)
+            img = (i)? (img >= 3) ? img=1:++img  :(img<=1) ? img=3 :--img
+            mv(img)
+        }
+        function m(i) {e=0
+            if (img==i)return
+            mo(img)
+            img=i
+            mv(img)
+        }
+        function mo(i) {
+            $('.hi.'+i).addClass('new').fadeOut(500)
+            $('.nav').removeClass('g')
+            $('button').prop('disabled',true)
+        }
+        function mv(i) {
+            $('.hi.'+i).removeClass('new').fadeIn(500,function () {
+                $('button').prop('disabled',false)
+            })
+            $('.nav.'+i).addClass('g')
+        }
+    </script>
+</body>
+</html>

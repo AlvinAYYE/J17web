@@ -1,0 +1,52 @@
+.hi{
+    width: 900px;
+    height: 500px;
+    display: none;
+    overflow: hidden;
+    
+}
+.hi img{
+    
+    width: 900px;
+    height: 500px;
+}
+.hi div{
+    padding: 8px;
+    background-color: rgba(255, 165, 0,0.5);
+    backdrop-filter:blur(5px) saturate(180%);
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: -130px;
+    text-align: center;
+}
+.new{
+    z-index: -1;
+    position: absolute;
+}
+.bt{
+    height: 500px;
+    font-size: 100px;
+    color:  rgba(128, 128, 128,0.75);
+    background: none;
+    border: none;
+    transition: 0.2s;
+}
+.bt:hover{
+    color: orange;
+}
+.bt:active{
+    color: orangered;
+}
+.nav{
+    border: none;
+    background: none;
+    background-color: rgba(128, 128, 128,0.75);
+    height: 10px;
+    width: 30px;
+    border-radius:8px ;
+    margin: 10px;
+}
+.g{
+    background-color: rgba(0, 0, 0,0.75);
+}

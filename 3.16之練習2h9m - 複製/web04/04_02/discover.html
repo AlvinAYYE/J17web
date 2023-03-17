@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title>
+    <link rel="icon" href="./LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./素材庫/jquery-3.6.3.min.js"></script>
+    <style>
+        .tbox{
+            width: 1000px;
+            height: 400px;
+            padding: 0;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        .tbox img{
+            width: 50%;
+            height: 100%;
+            flex: 50%;
+        }
+        .tbox div{
+            flex: 50%;
+            padding: 8px 0;
+            width: 50%;
+        }
+        .tbox div h1{
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color:orange;
+            width: 50%;
+            text-align: center;
+        }
+        .tbox div p{
+            width: 95%;
+        }
+        .le {
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0;
+            height: 20px;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            transition: height 1s linear;
+        }
+        .mo {
+            white-space: pre-wrap;
+            margin: 0;
+            height: 0;
+            overflow: hidden;
+            transition: height 1s linear;
+        }
+        .show {
+            height: auto;
+        }
+
+        #more{
+            background-color: orange;
+            border: none;
+            border-radius: 8px;
+            width: 100px;
+            padding: 8px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="home.html"><img src="./LOGO.png" alt=""></a>
+        <a href="discover.html"  class="web">Discover</a>
+        <a href="tickets.html">Tickets</a>
+    </div>
+    <div class="box">
+         <div class="tbox">
+            <img src="./素材庫/img/Cable.jpg" alt="">
+            <div>
+                <h1 style="left: 0;">設計展資訊區</h1>
+                <h2>標題</h2>
+                <p>描述性文字</p>
+            </div>
+         </div>
+        </div>
+        <div class="box">
+        <div class="tbox">
+            <div>
+                <h1 style="right: 0">作品介紹區</h1>
+                <h2>標題</h2>
+                <p class="le">描述性文字描述性文字描述性文字描述性文字描描述性文字描述性文字描述性文字描述性文字描</p>
+                <p class="mo">描述性文字描述性文字描述性文字描述性文字描述性文字</p>
+                <button id="more">觀看更多<br>(Read more)</button>
+            </div>
+            <img src="./素材庫/img/Park.jpg" alt="">
+        </div>
+
+    </div>
+    <footer>
+        <div>
+            <a href="https://facebook"><img src="./素材庫/facebook.png" alt=""></a>
+            <a href="https://google"><img src="./素材庫/google.png" alt=""></a>
+        </div>
+        <p>Copyright &copy; 2023 YODEX All Rights Reserved</p>
+    </footer>
+    <script>
+$(function() {
+  $('#more').on('click', function() {
+    $('.le').toggleClass('mo show');
+    $(this).toggleClass('show');
+    $(this).text($('.le').hasClass('mo') ? '觀看更多\n(Read more)' : '收合\n(Collapse)');
+  });
+});
+
+    </script>
+</body>
+</html>

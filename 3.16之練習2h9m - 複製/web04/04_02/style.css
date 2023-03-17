@@ -1,0 +1,102 @@
+.top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 8px 0;
+    background-color: rgba(255, 255, 255,0.75);
+    backdrop-filter: blur(10px) saturate(180%);
+    border-bottom: 3px solid orange;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.top a{
+    text-align: center;
+    width: 129px;
+    color: orange;
+    padding: 8px;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 28px;
+    transition: all linear 0.3s;
+
+}
+.top a img{
+    height: 100px;
+
+}
+.web{
+    background-color: orange;
+    color: white !important;
+    border-radius: 8px;
+    transition: all linear 0.3s;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    padding: 8px 0;
+    background-color:rgba(0, 0, 0,0.5);
+    backdrop-filter:blur(10px)  saturate(180%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+footer p{
+    color: white;
+}
+footer div a img{
+    height: 30px;
+    width: 30px;
+    border: 8px;
+    margin: 20px;
+}
+*{
+    font-family: "微軟正黑體";
+    object-fit: cover;
+}
+.box{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.tbox{
+    width: 900px;
+    height: 200px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+} 
+body{
+    padding-top: 150px;
+    height: 930px;
+    width: 1920px;
+    margin: 0;
+    background-color: #eee;
+}
+::selection{
+    background: orange !important;
+    color: #eee !important;
+}
+/* ::-moz-selection{
+    
+    background: orange !important;
+    color: #eee !important;
+} */
+button{
+    cursor: pointer;
+}
+.ing{
+    cursor: progress !important;
+}

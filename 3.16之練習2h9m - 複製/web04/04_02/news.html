@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="icon" href="./LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+    <script src="./素材庫/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <div class="top">
+        <a href="home.html">Home</a>
+        <a href="news.html" class="web">News</a>
+        <a href="home.html"><img src="./LOGO.png" alt=""></a>
+        <a href="discover.html">Discover</a>
+        <a href="tickets.html">Tickets</a>
+    </div>
+    <div class="box">
+        <div class="hi"></div>
+        <div class="hi"></div>
+        <div class="hi"></div>
+    </div>
+    <div class="box">
+        <div class="hi"></div>
+        <div class="hi"></div>
+        <div class="hi"></div>
+    </div>
+    <div class="dd 1"></div>
+    <div class="dd 2"></div>
+    <div class="dd 3"></div>
+    <div class="dd 4"></div>
+    <div class="dd 5"></div>
+    <div class="dd 6"></div>
+    <script>
+        for (let i = 0; i < 6; i++) {
+            let te=`
+            <img src="./素材庫/img/News${i+1}.jpg" alt="">
+            <div>
+                <h2>標題</h2>
+                <p>描述性文字</p>
+                <button onclick="n(${i+1})">觀看(View)</button>
+            </div>
+            `
+            $('.hi').eq(i).html(te)
+            let xt =`
+            <img src="./素材庫/img/News${i+1}.jpg" alt="">
+            <button onclick="n(${i+1})">&#128473;</button>
+            `
+            $('.dd').eq(i).html(xt)
+        }
+    </script>
+    <footer>
+        <div>
+            <a href="https://facebook"><img src="./素材庫/facebook.png" alt=""></a>
+            <a href="https://google"><img src="./素材庫/google.png" alt=""></a>
+        </div>
+        <p>Copyright &copy; 2023 YODEX All Rights Reserved</p>
+    </footer>
+    <script>
+        function n(i) {
+            $('.dd.'+i).fadeToggle(1000)
+        }
+    </script>
+</body>
+</html>
