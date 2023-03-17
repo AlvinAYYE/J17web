@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="icon" href="./LOGO.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="./素材庫/jquery-3.6.3.min.js"></script>
+    <style>
+        .tid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.tid div p {
+  margin: 0;
+}
+
+.air {
+  width: 220px;
+  height: 17px;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.tbox {
+  width: 850px;
+  height: 750px;
+  padding: 10px;
+  display: flex;
+  position: relative;
+  margin: 20px;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.tbox img {
+  width: 50%;
+  height: 100%;
+  flex: 50%;
+}
+
+.mo {
+  display: none;
+}
+
+.bt {
+  background-color: orange;
+  border: none;
+  width: 220px;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.yy {
+  border-radius: 8px;
+  background: none;
+  width: 220px;
+  padding: 8px;
+}
+
+#ooo {
+  border: 2px solid;
+  filter: blur(1px) saturate(180%);
+  background-color: wheat;
+  user-select: none;
+  cursor: pointer;
+  margin: 0;
+  font-size: 20px;
+}
+
+input {
+  width: 200px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+
+}
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <a href="home.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="home.html"><img src="./LOGO.png" alt=""></a>
+        <a href="discover.html">Discover</a>
+        <a href="tickets.html" class="web">Tickets</a>
+    </div>
+    <div class="box">
+        <form method="post" action="./1.php" class="tbox">
+            <div class="tid">
+                <h1>YODEX新一代設計展</h1>
+                <div class="air" style="width: 140px;"></div>
+            </div>
+            <div class="tid">
+                <h2 style="width: 220px;">訂票資訊區</h2>
+                <div class="air"></div>
+            </div>
+            <div class="tid">
+                <div>
+                    <p>名字(First name):</p>
+                    <input type="text" name="n" onkeypress="return event.charCode>=48 && event.charCode<=57 ||  event.charCode>=65&&  event.charCode<=90|| event.charCode>=97&& event.charCode<=122">
+                </div>
+                <div>
+                    <p>姓氏(Last name):</p>
+                    <input type="text" name="l" onkeypress="return event.charCode>=48 && event.charCode<=57 ||  event.charCode>=65&&  event.charCode<=90|| event.charCode>=97&& event.charCode<=122">
+                </div>
+            </div>
+            <div class="tid">
+                <div>
+                    <p>手機號碼(Phone):</p>
+                    <input type="tel"name="p" onkeypress="return event.charCode>=48 && event.charCode<=57" maxlength="16" minlength="8">
+                    <!-- <input type="tel" onkeypress="return event.charCode>=48 && event.charCode<=57" id="phone" pattern="[0-9]{10}" maxlength="10"  minlength="0" placeholder="請輸入號碼自動加上886"> -->
+                </div>
+                <div class="air"></div>
+            </div>
+
+            <div class="tid">
+                <div>
+                    <p>會員密碼(Password):</p>
+                    <input type="password" name="s" onkeypress="return event.charCode>=48 && event.charCode<=57 ||  event.charCode>=65&&  event.charCode<=90|| event.charCode>=97&& event.charCode<=122">
+                </div>
+                <div>
+                    <p>數字驗證(Verificaon):</p>
+                    <div style="display: flex;flex-direction: row;">
+                        <div style="display: flex;align-items: center;">
+                          <input type="tel"  placeholder="按圖片重製驗證碼" minlength="4" maxlength="4" onkeypress="return event.charCode>=48 && event.charCode<=57" id="rrrr">
+                          <div style="    display: flex;align-items: flex-start;">
+                              <p onclick="oo()" id="ooo" >0000</p>
+                              <!-- <p style="color: red; font-size: 10px;margin: 0;">*按圖片重製驗證碼</p> -->
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tid">
+                <button onclick="oo()" type="reset" class="yy">重製表單(Reset Form)</button>
+                <button onclick="mm()" type="button" class="bt">送出按鈕(Submit)</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div>
+            <a href="https://facebook"><img src="./素材庫/facebook.png" alt=""></a>
+            <a href="https://google"><img src="./素材庫/google.png" alt=""></a>
+        </div>
+        <p>Copyright &copy; 2023 YODEX All Rights Reserved</p>
+    </footer>
+    <script>
+        function ddd() {
+            
+        }
+        let nu=0 ;
+        oo()
+        function oo() {
+            $('#ooo').html(nu=Math.floor(Math.random()*8999)+1000)
+        }
+        function mm() {
+              if ($('#rrrr').val() !=nu) {
+                alert('驗證碼錯誤');
+              } else {
+                $('*').addClass('ing');
+                setTimeout(function() {
+                  $('form').submit();
+                }, 1000);
+              }
+            }
+    </script>
+</body>
+</html>
